@@ -1,4 +1,4 @@
-# Thesis Project
+# Thesis Project // Дипломен Проект
 
 ENG:
 
