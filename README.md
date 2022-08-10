@@ -1,0 +1,2 @@
+# diplomna
+thesis project
