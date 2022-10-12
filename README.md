@@ -1,4 +1,4 @@
-# Thesis Project // Дипломен Проект
+# Thesis Project - CiVi
 
 ENG:
 
