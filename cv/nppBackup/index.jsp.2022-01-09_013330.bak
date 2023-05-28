@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>CV Results</title>
+	</head>
+	
+	<body>
+		<%  java.util.Map<java.lang.String, java.lang.String[]> Fields = request.getParameterMap();
+			if (Fields != null)
+			{
+				for (Map.Entry FieldEntry : Fields.entrySet())
+				{
+					out.println(FieldEntry.getKey() + " - " + FieldEntry.getValue());
+				}
+			}
+			else
+			{
+				out.println("No map!");
+			}
+			out.println("Henlo!");
+		%>
+		<%= "Hello World!" %>
+	</body>
+</html>

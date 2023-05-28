@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>CV Results</title>
+	</head>
+	
+	<body>
+		<%  java.util.Map<java.lang.String, java.lang.String[]> Fields = request.getParameterMap();
+			if (Fields != null)
+			{
+				for (java.util.Map.Entry<java.lang.String, java.lang.String[]> FieldEntry : Fields.entrySet())
+				{
+					out.println(FieldEntry.getKey() + " - " + (FieldEntry.getValue())[0] + "<br>");
+				}
+			}
+			else
+			{
+				out.println("No map!");
+			}
+			
+			String URL  = "jdbc:jtds:sqlserver://localhost";
+			String ID   = "root";
+			String Pass = "adminwithbigdick69";
+			
+			java.sql.Connection Connection = java.sql.DriverManager.getConnection(URL, ID, Pass);
+			"SELECT * FROM main;"
+		%>
+		<%= "Hello World!" %>
+	</body>
+</html>

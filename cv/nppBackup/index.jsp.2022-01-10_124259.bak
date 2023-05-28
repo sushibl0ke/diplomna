@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>CV Results</title>
+	</head>
+	
+	<body>
+		<%  java.util.Map<java.lang.String, java.lang.String[]> Fields = request.getParameterMap();
+			if (Fields != null)
+			{
+				for (java.util.Map.Entry<java.lang.String, java.lang.String[]> FieldEntry : Fields.entrySet())
+				{
+					out.println(FieldEntry.getKey() + " - " + (FieldEntry.getValue())[0] + "<br>");
+				}
+			}
+			else
+			{
+				out.println("No map!");
+			}
+			
+			String DatabaseURL = "jdbc:jtds:sqlserver://localhost";
+		%>
+		<%= "Hello World!" %>
+	</body>
+</html>

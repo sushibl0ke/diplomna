@@ -1,0 +1,46 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<html>
+	<head>
+		<title>CV Results</title>
+	</head>
+	
+	<body>
+		<%  String Query = "INSERT INTO main VALUES(";
+			java.util.Map<java.lang.String, java.lang.String[]> Fields = request.getParameterMap();
+			if (Fields != null)
+			{
+				Integer Count = Fields.size();
+				Integer Index = 1;
+				
+				for (java.util.Map.Entry<java.lang.String, java.lang.String[]> FieldEntry : Fields.entrySet())
+				{
+					String Value = (FieldEntry.getValue())[0];
+					Query += "'" + Value + "'";
+					if (Index++ != Count) { Query += ", "; }
+					out.println(FieldEntry.getKey() + " - " + Value + "<br>");
+				}
+				Query += ");";
+				
+				out.println(Query + "<br>");
+			}
+			else
+			{
+				out.println("No map!");
+			}
+			
+			String URL  = "jdbc:mysql://localhost:3306/cv";
+			String ID   = "root";
+			String Pass = "adminwithbigdick69";
+			
+			Class.forName("com.mysql.jdbc.Driver");
+			java.sql.Connection Connection = java.sql.DriverManager.getConnection(URL, ID, Pass);
+			
+			java.sql.Statement Statement = Connection.createStatement();
+			// java.sql.ResultSet Result = 
+			Statement.executeUpdate(Query);
+		%>
+	</body>
+</html>

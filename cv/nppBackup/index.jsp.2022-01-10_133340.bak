@@ -1,0 +1,39 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<html>
+	<head>
+		<title>CV Results</title>
+	</head>
+	
+	<body>
+		<%  java.util.Map<java.lang.String, java.lang.String[]> Fields = request.getParameterMap();
+			if (Fields != null)
+			{
+				for (java.util.Map.Entry<java.lang.String, java.lang.String[]> FieldEntry : Fields.entrySet())
+				{
+					out.println(FieldEntry.getKey() + " - " + (FieldEntry.getValue())[0] + "<br>");
+				}
+			}
+			else
+			{
+				out.println("No map!");
+			}
+			
+			String URL  = "jdbc:jtds:sqlserver://localhost/cv";
+			String ID   = "root";
+			String Pass = "adminwithbigdick69";
+			
+			Class.forName("net.sourceforge.jtds.jdbc.Driver");
+			java.sql.Connection Connection = java.sql.DriverManager.getConnection(URL, ID, Pass);
+			
+			java.sql.Statement Statement = Connection.createStatement();
+			java.sql.ResultSet Result = Statement.executeQuery("SELECT * FROM main;");
+			
+			Result.next();
+			out.println(Result.getString("Phone"));
+		%>
+		<%= "Hello World!" %>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>CV Results</title>
+	</head>
+	
+	<body>
+		<%  Map<String,String[]> Parameters;
+			Fields = request.getParameterValues("data"); 
+			if (Fields != null) {
+				for (String Field : Fields) {
+					out.println(Field);
+				}
+			}
+		%>
+		<%= "Hello World!" %>
+	</body>
+</html>

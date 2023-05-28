@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<title>CV Maker</title>
+		<style>
+			body { margin: 0 auto; width:50%; }
+			label { display:inline-block; margin-right:40px; font-weight:bold; width:150px; }
+		</style>
+	</head>
+	
+	<body>
+		<h1 style="text-align:center;">CV Maker V1.0</h1>
+		
+		<form type="POST" action="index.jsp">
+			<fieldset>
+				<label>Wanted Job Title<br>
+					<input required type="text" name="WantedJobTitle" value="Senior Manager"><br>
+				</label>
+				
+				<br><br>
+				
+				<label>First Name<br>
+					<input required type="text" name="FirstName" value="John"><br>
+				</label>
+				<label>Last Name<br>
+					<input required type="text" name="LastName" value="Doe"><br>
+				</label>
+				
+				<br><br>
+				
+				<label>Email<br>
+					<input required type="email" name="Email" value="example@email.com"><br>
+				</label>
+				<label>Phone<br>
+					<input required type="tel" name="Phone" value="0123456789" maxlength="16"><br>
+				</label>
+				
+				<br><br>
+				
+				<label>Country<br>
+					<input required type="text" name="Country" value="Bulgaria"><br>
+				</label>
+				<label>City<br>
+					<input required type="text" name="City" value="Sofia"><br>
+				</label>
+				
+				<br><br>
+				
+				<label>Address<br>
+					<input required type="text" name="Address" value="Lom" size="49"><br>
+				</label>
+				
+				<br><br>
+				
+				<label>Country<br>
+					<input required type="text" name="Country" value="Bulgaria"><br>
+				</label>
+				<label>City<br>
+					<input required type="text" name="City" value="Sofia"><br>
+				</label>
+				
+				<br><br>
+				
+				<label>Postal Code<br>
+					<input required type="text" name="PostalCode" value="1670"><br>
+				</label>
+				<label>Nationality<br>
+					<input required type="text" name="Nationality" value="Myglata idva"><br>
+				</label>
+				
+				<br><br>
+				
+				<label>Place Of Birth<br>
+					<input required type="text" name="PlaceOfBirth" value="Lom"><br>
+				</label>
+				<label>Date Of Birth<br>
+					<input required type="date" name="DateOfBirth" value="2001-09-11"><br>
+				</label>
+			</fieldset>
+			
+			<input type="submit" value="Submit">
+		</form>
+	</body>
+</html>

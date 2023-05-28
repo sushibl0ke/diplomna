@@ -1,0 +1,38 @@
+<%@ page import = "java.io.*,java.util.*,java.sql.*"%>
+<%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
+<html>
+	<head>
+		<title>CV Results</title>
+	</head>
+	
+	<body>
+		<%  java.util.Map<java.lang.String, java.lang.String[]> Fields = request.getParameterMap();
+			if (Fields != null)
+			{
+				for (java.util.Map.Entry<java.lang.String, java.lang.String[]> FieldEntry : Fields.entrySet())
+				{
+					out.println(FieldEntry.getKey() + " - " + (FieldEntry.getValue())[0] + "<br>");
+				}
+			}
+			else
+			{
+				out.println("No map!");
+			}
+			
+			String URL  = "jdbc:mysql://localhost";
+			String ID   = "root";
+			String Pass = "adminwithbigdick69";
+			
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			java.sql.Connection Connection = java.sql.DriverManager.getConnection(URL, ID, Pass);
+			
+			java.sql.Statement Statement = Connection.createStatement();
+			java.sql.ResultSet Result = Statement.executeQuery("SELECT * FROM main;");
+			
+			out.println(Result.getString("Phone"));
+		%>
+		<%= "Hello World!" %>
+	</body>
+</html>
